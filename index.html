@@ -9,7 +9,8 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
@@ -28,20 +29,25 @@
  #map { position: absolute; top:0; bottom:0; right:0; left:0; }  
 .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
 .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
+.github-fork-ribbon.right-top:before { background-color: #dbdbdb; }
+.github-fork-ribbon.right-top:after { color: #511756; border-width: 0; text-shadow: 0 -.00em rgba(0, 0, 0, 0.5); }
+
 </head>
 <body>
 
 <div id='map'></div>
-
+<a class="github-fork-ribbon left-top" href="https://cartoscience.com" data-ribbon="cartoscience.com" title="cartoscience.com">cartoscience.com</a>
+	
 <script type="text/javascript" src="mw-dists.js"></script>
 
 <script type="text/javascript">
 
 	var map = L.map('map').setView([-13.2455035, 34.2932855], 7);
+	map.removeControl(map.zoomControl);
 
 	L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}{r}.png', {
 		maxZoom: 18,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+		attribution: 'Basemap: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 		subdomains: 'abcd',
 		id: 'carto.dark'
 	}).addTo(map);
@@ -67,13 +73,13 @@
 	// get color depending on population density value
 	function getColor(d) {
 		return d > 28705 ? '#110210' :
-				d > 22255  ? '#810f7c' :
-        			d > 10462  ? '#88419d' :
-				d > 2280  ? '#8c6bb1' :
-				d > 435  ? '#8c96c6' :
-				d > 129   ? '#9ebcda' :
-				d > 66   ? '#bfd3e6' :
-				d > 13   ? '#e0ecf4' :
+				d > 22255  ? '#4d004b' :
+        			d > 10462  ? '#810f7c' :
+				d > 2280  ? '#88419d' :
+				d > 435  ? '#8c6bb1' :
+				d > 129   ? '#8c96c6' :
+				d > 66   ? '#9ebcda' :
+				d > 13   ? '#bfd3e6' :
 							'#e0ecf4';
 	}
 
@@ -129,7 +135,7 @@
 		onEachFeature: onEachFeature
 	}).addTo(map);
 
-	map.attributionControl.addAttribution('Crop production statistics &copy; Malawi Ministry of Agriculture and Food Security');
+	map.attributionControl.addAttribution('Crop production statistics: &copy; Malawi Ministry of Agriculture and Food Security');
         map.attributionControl.addAttribution('Map design by Brad G. Peter, &copy <a href="https://cartoscience.com/multiscalar-decision-support">CartoScience</a>, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &mdash; Map and manuscript published by &copy <a href="https://doi.org/10.1017/S0014479718000066">Experimental Agriculture</a>');
 	map.attributionControl.addAttribution('Colors by &copy <a href="http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3">ColorBrewer 2.0</a>.');
 
