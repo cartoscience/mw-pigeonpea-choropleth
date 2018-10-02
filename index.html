@@ -40,7 +40,7 @@
 
 <script type="text/javascript">
 
-	var map = L.map('map').setView([14, 33.8], 10);
+	var map = L.map('map').setView([14, 33.8], 5);
 
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -71,15 +71,15 @@
 
 	// get color depending on population density value
 	function getColor(d) {
-		return d > 28705 ? '#4d004b' :
-				d > 22255  ? '#810f7c' :
-        			d > 10462  ? '#88419d' :
-				d > 2280  ? '#8c6bb1' :
+		return d > 28705 ? '#110210' :
+				d > 22,255  ? '#810f7c' :
+        			d > 10,462  ? '#88419d' :
+				d > 2,280  ? '#8c6bb1' :
 				d > 435  ? '#8c96c6' :
 				d > 129   ? '#9ebcda' :
 				d > 66   ? '#bfd3e6' :
 				d > 13   ? '#e0ecf4' :
-							'#f7fcfd';
+							'#e0ecf4';
 	}
 
 	function style(feature) {
@@ -136,7 +136,7 @@
 
 	map.attributionControl.addAttribution('Crop production statistics &copy; Malawi Ministry of Agriculture and Food Security');
         map.attributionControl.addAttribution('Map design by Brad G. Peter, &copy <a href="https://cartoscience.com/multiscalar-decision-support">CartoScience</a>, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &mdash; Map and manuscript published by &copy <a href="https://doi.org/10.1017/S0014479718000066">Experimental Agriculture</a>');
-	map.attributionControl.addAttribution('Colors by &copy <a href="http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3">ColorBrewer 2.0</a>');
+	map.attributionControl.addAttribution('Colors by &copy <a href="http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3">ColorBrewer 2.0</a>.');
 
 	var legend = L.control({position: 'bottomright'});
 
