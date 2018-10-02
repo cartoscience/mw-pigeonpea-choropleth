@@ -1,4 +1,4 @@
-# Interactive choropleth - Pigeonpea in Malawi
+# Interactive choropleth - Pigeonpea in Malawi  2012
 
 <br>
 <b>Bringing choropleth mapping to an interactive form</b>
