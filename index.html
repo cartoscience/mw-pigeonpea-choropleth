@@ -27,7 +27,8 @@
 		}
 	</style>
 
-	<style>#map { width: 800px; height: 500px; }
+	<style>
+ #map { position: absolute; top:0; bottom:0; right:0; left:0; }  
 .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
 .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
 </head>
@@ -39,7 +40,7 @@
 
 <script type="text/javascript">
 
-	var map = L.map('map').setView([14, 33.8], 4);
+	var map = L.map('map').setView([14, 33.8], 10);
 
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -70,15 +71,15 @@
 
 	// get color depending on population density value
 	function getColor(d) {
-		return d > 28705 ? '#800026' :
-				d > 22255  ? '#BD0026' :
-        d > 10462  ? '#BD0026' :
-				d > 2280  ? '#E31A1C' :
-				d > 435  ? '#FC4E2A' :
-				d > 129   ? '#FD8D3C' :
-				d > 66   ? '#FEB24C' :
-				d > 13   ? '#FED976' :
-							'#FFEDA0';
+		return d > 28705 ? '#4d004b' :
+				d > 22255  ? '#810f7c' :
+        			d > 10462  ? '#88419d' :
+				d > 2280  ? '#8c6bb1' :
+				d > 435  ? '#8c96c6' :
+				d > 129   ? '#9ebcda' :
+				d > 66   ? '#bfd3e6' :
+				d > 13   ? '#e0ecf4' :
+							'#f7fcfd';
 	}
 
 	function style(feature) {
@@ -134,7 +135,8 @@
 	}).addTo(map);
 
 	map.attributionControl.addAttribution('Crop production statistics &copy; Malawi Ministry of Agriculture and Food Security');
-
+        map.attributionControl.addAttribution('Map design by Brad G. Peter, &copy <a href="https://cartoscience.com/multiscalar-decision-support">CartoScience</a>, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &mdash; Map and manuscript published by &copy <a href="https://doi.org/10.1017/S0014479718000066">Experimental Agriculture</a>');
+	map.attributionControl.addAttribution('Colors by &copy <a href="http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3">ColorBrewer 2.0</a>');
 
 	var legend = L.control({position: 'bottomright'});
 
