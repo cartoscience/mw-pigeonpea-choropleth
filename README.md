@@ -10,3 +10,5 @@ Snapp, S., Rogé, P., Okori, P., Chikowo, R., Peter, B. G., and Messina, J. 2018
 <br>
 <br>
 <a href = "https://doi.org/10.1017/S0014479718000066">Link to manuscript</a> | <a href = "https://cartoscience.github.io/mw-pigeonpea-choropleth/">Link to map</a>
+<br>
+	<p class="footer">&copy; 2018 <a target="_blank" rel="noopener noreferrer" href="https://cartoscience.com">Cartoscience</a></p>
